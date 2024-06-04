@@ -26,18 +26,20 @@
         <div id="project-list" class="m-2 grid-rows-projects-1 bg-white grid">
             <div id="project-first" class="mx-2 convert grid mb-1 max-h-full grid-cols-root-2-internal row-span-1 row-start-1">
                 <div class="col-start-1 pr-4 flex flex-row items-center ">
-                    <img class="object-cover border-2 border-second-accent h-0 w-full overflow-hidden" src="../img/projects/sound_processing_brown_saturation.png"/>
+                    <a href="/projects/sound-processing/">
+                        <img class="object-cover border-2 border-second-accent h-0 w-full overflow-hidden" src="../img/projects/sound_processing_brown_saturation.png"/>
+                    </a>
                 </div>        
                 <div class="col-start-2 pl-4 border-l-2 my-2 border-first-accent flex flex-row items-center">
                     <img class="object-cover border-2  border-first-accent  h-0 object-center w-full" src="../img/projects/writing_on_desk_blue_lchcolor.jpg"/> 
                 </div>        
             </div>
             <div id="project-second" class="mx-2 row-start-2 my-1 grid grid-cols-root-2">
-                <div class="col-start-1 mr-2 flex flex-row items-center">
-                    <img class="object-cover border-2 border-second-accent  h-0 object-center w-full" src="../img/projects/heimerdinger_brown_hsvhue.jpeg"/> 
+                <div class="col-start-1 pr-4 flex flex-row items-center">
+                    <img class="object-cover border-2 border-second-accent   h-0 object-center w-full" src="../img/projects/heimerdinger_brown_hsvhue.jpeg"/> 
                 </div>        
-                <div class="col-start-2 border-l-2 border-second-accent ml-2 my-2 bg-second-accent grid grid-rows-root-2">
-                    <img class="object-cover border-2 border-second-accent  h-0 object-center w-full " src="../img/projects/cocoa_brown_lch_hue.png"/> 
+                <div class="col-start-2 border-l-2 pl-4 border-second-accent my-2 grid grid-rows-3">
+                    <img id="inside-job" class="row-start-2 row-span-2 object-cover border-2 bg-gradient-to-r from-white to-second-accent border-second-accent object-center w-full " src="../img/projects/cocoa_brown_lch_hue.png"/> 
                 </div>        
             </div>
             <div id="project-third" class="mx-2 row-start-3 mt-1 grid grid-cols-reversed-root-3">
@@ -87,8 +89,21 @@
                 projects_height_grid.forEach(rowEle => {
                     for (let ele of rowEle['object'].getElementsByTagName('img')) {
                        console.log('ele height before is : ' + ele.height);
-                       ele.style.height = (rowEle['height'] * frame_h_val - gap_y) + 'px';  
-                       console.log('ele height before is : ' + ele.height);
+                        let height_value = (rowEle['height'] * frame_h_val - gap_y); 
+
+                       
+                        // Abstract this ? 
+                        // hard coded ratios 0.289fr 0.711fr (root-2-internal) and the image is in the second row of it.
+
+                       console.log('ele height before inside job is : ' + ele.height);
+                        if(ele.id == "inside-job"){
+                            height_value = height_value * 2 / 3 ;
+                            console.log("inside job height: " + height_value);
+                        }
+
+                        ele.style.height = height_value + 'px';  
+
+                       console.log('ele height after inside job is : ' + ele.height);
                     }
                 }); 
                 

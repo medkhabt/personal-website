@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sound Processing</title>
+        <meta name="description" content="Portfolio website">
+        <meta name="keywords" content="loukhnati, mohamed, loukhnati, med, kha, IT, Computer, Job, Personal">
+        <meta name="author" content="Mohamed Khalil Loukhnati">
+        <link href="../../style.css" rel="stylesheet">
+    </head>
+    <body  class="bg-std-main px-4 font-serif ">
+        <header id="header" class="border-b-2 bg-std-main border-first-accent relative z-20 h-14">
+            <nav class="flex flex-row justify-center justify-items-center  mx-10 pt-2 h-full">
+                <div class="flex border-first-accent content-center text-center px-5 h-10 ">
+                    <a href="/" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Home</a>
+                </div>
+                <div class="flex border-l-2 border-first-accent content-center text-center px-5 h-10 ">
+                    <a href="/projects" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Projects</a>
+                </div>
+                <div class="flex border-l-2 border-first-accent content-center text-center px-5 h-10 ">
+                    <a href="/blogs/" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Blogs</a>
+                </div>
+                <div class="flex border-l-2 border-first-accent content-center text-center px-5 h-10 ">
+                    <a href="/#title_contact" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Contact</a>
+                </div>
+        </header>
+
+        <div id="project-canvas" class="mb-2 mx-2 bg-white grid grid-cols-root-3">
+            <div class="col-start-1 h-full grid grid-rows-root-2-internal grid-cols-root-3 mb-10">
+                <div class="row-start-1 col-start-1 col-span-2 flex items-center justify-center">
+                    <h1 class="text-4xl text-second-accent">Guitar Bend Assist</h1>
+                </div>
+                <div class="row-start-2 ml-10 mr-5 flex items-start text-sm">
+                    <p class="text-justify">
+                    &emsp;The project aims to assist users in practicing bends by detecting and plotting bends on a time (x-axis) and pitch (y-axis) graph. By comparing the results to standard bending techniques, users can identify specific aspects of their bends that need improvement.<br><br>&emsp;Additionally, the project helps users understand the target pitch of their bends, indicating whether they have overshot or undershot the desired pitch. A future goal is to detect bends in a WAV file and analyze them, allowing users to compare their bends to specific references.<br><br>&emsp;Primarily, this project serves as a discovery initiative to learn about sound processing. The priority is to gain comprehensive knowledge in the field of sound processing and develop a quality product without heavily relying on existing libraries and frameworks.
+                    </p>  
+                </div>
+                <div class="row-start-2 col-start-2 ml-5 mr-10 flex items-start text-sm">
+                    <p class="text-justify">
+                    <br><br>&emsp;To show the current phase of the project, the following milestones outline the ongoing and planned tasks: <br><br>
+                    - Detect Pitch Notes <br><br>
+                    - Experiment with different methods based on research papers<br><br>
+                    - Methods relying on the waveform<br><br>
+                    - Methods relying on the frequency<br><br>
+
+                    </p>
+                </div>
+            </div> 
+            <div class="col-start-2 h-full grid mr-10 mb-10 reversed-grid-rows-root-2-internal">
+                <div class="row-start-1 grid grid-rows-[1fr_9px_4fr] mb-2">
+                    <div id="video-progress" class="row-start-2 w-full h-2 bg-std-main border border-first-accent rounded-xl shadow-sm my-0.5 stretch " >
+                            <div id="bar" class="w-1/6 h-full bg-first-accent"></div> 
+                    </div>
+                    <video id="player" class="self-center row-start-3" muted >
+                        <source src="../../img/projects/sound_processing.mp4" type="video/mp4"/> 
+                    </video> 
+                </div>
+                <div class="row-start-2 bg-blue-800 grid grid-cols-root-2">
+                    <div class="bg-red-100">Techs section</div> 
+                    <div class="bg-red-800">Links section</div> 
+                </div>
+            </div> 
+        </div>
+        <p> Techs: Python, Shell(bash)</p>
+        <p> link github</p>
+        <script>
+            const player = document.getElementById("player"); 
+            const bar = document.getElementById("bar");
+            const loader = document.getElementById("video-progress");
+            function render_project_canvas(){
+                const viewportHeight = window.innerHeight; 
+                const project_canvas = document.getElementById('project-canvas'); 
+                const header_height =  document.getElementsByTagName('header')[0].offsetHeight; 
+                const style_project_canvas = window.getComputedStyle(project_canvas); 
+                const margin_padding_y= 
+                    Number(style_project_canvas.marginTop.replace('px','')) + 
+                    Number(style_project_canvas.marginBottom.replace('px', '')) + 
+                    Number(style_project_canvas.paddingTop.replace('px', '')) + 
+                    Number(style_project_canvas.paddingBottom.replace('px', ''));
+                // remove the margin and padding from the height 
+                project_canvas.style.height = (viewportHeight - header_height - margin_padding_y) + 'px'; 
+            }
+            function video_handler(){
+                player.playbackRate = 1.5;
+                player.addEventListener('timeupdate', move ,false);
+                player.play(); 
+//                loader.style.width = player.clientHeight + 'px';
+//                position_loading();
+                player.addEventListener('ended', () => {player.play()}, false)
+                
+            }
+            function position_loading(){
+               loader.style.transform= 'translateY('+ loader.getBoundingClientRect().bottom - player.getBoudingClientRect().bottom  + 'px)';
+            }
+            function move() {
+               bar.style.width = player.currentTime * 100  / player.duration + "%";
+            }
+            window.addEventListener('load', render_project_canvas);
+            window.addEventListener('load', video_handler);
+
+            window.addEventListener('resize', render_project_canvas);
+        </script>
+    </body>
+</html>

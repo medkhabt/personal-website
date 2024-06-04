@@ -49,6 +49,7 @@ module.exports = {
         },
         gridTemplateRows: {
             'root-2' : '1fr 0.414fr', 
+            'root-3' : '1fr 0.73fr',
             'reversed-root-2-internal': '0.711fr 0.289fr', 
             'root-2-internal': '0.289fr 0.711fr', 
             'projects-1' : '2fr 4fr 1fr',
