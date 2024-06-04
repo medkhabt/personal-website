@@ -1,7 +1,8 @@
 /* 
-
+.*.swp
 !.gitignore
 !tailwind.config.js
 !pages/
 !package.json
 !style/
+
