@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Projects</title>
+        <meta name="description" content="Portfolio website">
+        <meta name="keywords" content="loukhnati, mohamed, loukhnati, med, kha, IT, Computer, Job, Personal">
+        <meta name="author" content="Mohamed Khalil Loukhnati">
+        <link href="../style.css" rel="stylesheet">
+    </head>
+    <body class="bg-std-main px-4">
+        <header id="header" class="border-b-2 bg-std-main border-first-accent relative z-20 h-14">
+            <nav class="flex flex-row justify-center justify-items-center  mx-10 pt-2 h-full">
+                <div class="flex border-first-accent content-center text-center px-5 h-10 ">
+                    <a href="/" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Home</a>
+                </div>
+                <div class="flex border-l-2 border-first-accent content-center text-center px-5 h-10 ">
+                    <a href="/projects" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Projects</a>
+                </div>
+                <div class="flex border-l-2 border-first-accent content-center text-center px-5 h-10 ">
+                    <a href="/blogs/" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Blogs</a>
+                </div>
+                <div class="flex border-l-2 border-first-accent content-center text-center px-5 h-10 ">
+                    <a href="/#title_contact" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Contact</a>
+                </div>
+        </header>
+        <div id="project-list" class="m-2 grid-rows-projects-1 bg-white grid">
+            <div id="project-first" class="mx-2 convert grid mb-1 max-h-full grid-cols-root-2-internal row-span-1 row-start-1">
+                <div class="col-start-1 pr-4 flex flex-row items-center ">
+                    <img class="object-cover border-2 border-second-accent h-0 w-full overflow-hidden" src="../img/projects/sound_processing_brown_saturation.png"/>
+                </div>        
+                <div class="col-start-2 pl-4 border-l-2 my-2 border-first-accent flex flex-row items-center">
+                    <img class="object-cover border-2  border-first-accent  h-0 object-center w-full" src="../img/projects/writing_on_desk_blue_lchcolor.jpg"/> 
+                </div>        
+            </div>
+            <div id="project-second" class="mx-2 row-start-2 my-1 grid grid-cols-root-2">
+                <div class="col-start-1 mr-2 flex flex-row items-center">
+                    <img class="object-cover border-2 border-second-accent  h-0 object-center w-full" src="../img/projects/heimerdinger_brown_hsvhue.jpeg"/> 
+                </div>        
+                <div class="col-start-2 border-l-2 border-second-accent ml-2 my-2 bg-second-accent grid grid-rows-root-2">
+                    <img class="object-cover border-2 border-second-accent  h-0 object-center w-full " src="../img/projects/cocoa_brown_lch_hue.png"/> 
+                </div>        
+            </div>
+            <div id="project-third" class="mx-2 row-start-3 mt-1 grid grid-cols-reversed-root-3">
+                <div class="col-start-1 my-2 mr-2 border-r-2 border-first-accent"></div>        
+                <div class="col-start-2 ml-2 flex items-center flex-row">
+                    <img class="object-cover border-2 border-first-accent h-0 object-center overflow-hidden w-full" src="../img/projects/art_languages_blue_vivid_ligth.jpeg"/> 
+                </div>        
+            </div>
+        </div>
+        <script>
+            // 'projects-1' : '2fr 4fr 1fr', 1fr 0.414fr
+            //'reversed-root-3' : '0.73fr 1fr', 0.289fr 0.711fr
+            projects_height_grid = [
+                {'object': document.getElementById('project-first'), 'width':[0.289, 0.711], 'height': 2}, 
+                {'object': document.getElementById('project-second'), 'width':[1, 0.414], 'height': 4}, 
+                {'object': document.getElementById('project-third'), 'width':[0.73, 1], 'height' : 1}
+            ]; 
+
+
+            function set_size_images(){
+                const viewportHeight = window.innerHeight; 
+                const project_list = document.getElementById('project-list'); 
+                const headerHeight = document.getElementById('header').clientHeight
+
+                const margin_top_project_list = window.getComputedStyle(project_list).marginTop.replace('px','');
+                const gap_y= 2 * Number(margin_top_project_list);  
+                const projects_height= viewportHeight -  headerHeight -  2 * Number(margin_top_project_list)  - 2 * gap_y;
+                console.log("the vh value is : " + viewportHeight); 
+                console.log("header hegith div is : " + headerHeight); 
+
+
+                console.log("project heigth div is : " + projects_height); 
+                console.log("margin top heigth div is : " + margin_top_project_list); 
+
+                document.getElementById('project-list').style.height = projects_height + 'px'
+
+                frames_of_vh = 0; 
+                for(var i=0; i < projects_height_grid.length; i++){
+                    frames_of_vh = (parseFloat(frames_of_vh) + parseFloat(projects_height_grid[i]['height'])).toFixed(4);
+                }
+
+                console.log("number of frames for the vh is : " + frames_of_vh);
+                const frame_h_val = projects_height / frames_of_vh;
+                console.log("the value of a frame vertically is : " + frame_h_val + "px");
+                
+                    
+                projects_height_grid.forEach(rowEle => {
+                    for (let ele of rowEle['object'].getElementsByTagName('img')) {
+                       console.log('ele height before is : ' + ele.height);
+                       ele.style.height = (rowEle['height'] * frame_h_val - gap_y) + 'px';  
+                       console.log('ele height before is : ' + ele.height);
+                    }
+                }); 
+                
+            }
+
+            window.addEventListener('load', set_size_images)
+            window.addEventListener('resize', set_size_images)
+        </script>
+    </body>
+</html>
