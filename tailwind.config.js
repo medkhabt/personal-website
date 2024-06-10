@@ -3,6 +3,9 @@ module.exports = {
   content: ['./**/*.html'],
   theme: {
     extend: {
+        screens: {
+            'lg': '1025px',
+        },
         colors: {
             'cyber-grape' : '#4E4175', 
             'grullo' : '#A8938A', 
@@ -37,6 +40,7 @@ module.exports = {
         },
         spacing: {
             '2/3-screen': '70vh',
+            '1/3-screen': '30vh',
             'half-screen': '50vh',
             '200%': '200%'
         },
@@ -50,9 +54,18 @@ module.exports = {
         gridTemplateRows: {
             'root-2' : '1fr 0.414fr', 
             'root-3' : '1fr 0.73fr',
+            'root-3-3' : '0.29fr 0.13fr 0.58fr', 
+            'root-3-3-extend' : '0.29fr 0.13fr 0.29fr 0.29fr', 
+            'phone-root-3-3-extend' : '30vh 0.828fr 1fr 1fr', 
+            'phone-root-3-3-footer' : '0.224fr 30vh 1fr 100px',
             'reversed-root-2-internal': '0.711fr 0.289fr', 
             'root-2-internal': '0.289fr 0.711fr', 
             'projects-1' : '2fr 4fr 1fr',
+            'double-root-2': '0.289fr 0.422fr 0.289fr',
+        },
+        transitionProperty: {
+            'width': 'width', 
+            'display': 'display',
         }
     },
   },

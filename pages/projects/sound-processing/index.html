@@ -54,14 +54,21 @@
                         <source src="../../img/projects/sound_processing.mp4" type="video/mp4"/> 
                     </video> 
                 </div>
-                <div class="row-start-2 bg-blue-800 grid grid-cols-root-2">
-                    <div class="bg-red-100">Techs section</div> 
-                    <div class="bg-red-800">Links section</div> 
+                <div class="row-start-2 grid grid-cols-root-2">
+                    <div id="language-logos" class=" grid grid-cols-2 grid-rows-2 items-center ">
+                        <img class="languages object-cover h-0 col-start-1 row-start-1 overflow-hidden justify-self-center" src="../../img/python_blue_hsl_color.png"/>
+                        <p class="col-start-2 row-start-1 justify-self-start text-first-accent">Python</p>
+                        <img class="languages object-cover h-0 col-start-1 row-start-2 overflow-hidden justify-self-center" src="../../img/bash_blue_exclusion.png"/>
+                        <p class="col-start-2 row-start-2 justify-self-start text-first-accent">Bash/Shell</p>
+                    </div> 
+                    <div class="border-l-2 border-first-accent pl-2 grid grid-rows-3">
+                        <div class="row-start-3 flex items-center">
+                            <a href="https://github.com/medkhabt/guitar_bend_trainer" target="_blank" rel="noopener noreferrer" class="pl-20 pr-4 py-2 border text-white bg-first-accent "><span>Source</span></a>
+                        </div>
+                    </div> 
                 </div>
             </div> 
         </div>
-        <p> Techs: Python, Shell(bash)</p>
-        <p> link github</p>
         <script>
             const player = document.getElementById("player"); 
             const bar = document.getElementById("bar");
@@ -94,10 +101,23 @@
             function move() {
                bar.style.width = player.currentTime * 100  / player.duration + "%";
             }
+            function language_logos_handler(){
+                const logo_div = document.getElementById("language-logos")
+                const heigth_logo_div = logo_div.offsetHeight;
+                console.log("heights logo_div: " + logo_div)
+                const number_langs = 2;
+                for(let lang of logo_div.getElementsByTagName('img')){
+                    console.log("lang style: " + heigth_logo_div / number_langs)
+                    lang.style.height = heigth_logo_div / number_langs + 'px'; 
+                }
+                
+            } 
             window.addEventListener('load', render_project_canvas);
             window.addEventListener('load', video_handler);
+            window.addEventListener('load', language_logos_handler);
 
             window.addEventListener('resize', render_project_canvas);
+            window.addEventListener('resize', language_logos_handler);
         </script>
     </body>
 </html>

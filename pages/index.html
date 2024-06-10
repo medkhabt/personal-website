@@ -4,11 +4,12 @@
 	<title>MedkhaBT</title>
     <meta name="description" content="Portfolio website">
     <meta name="keywords" content="loukhnati, mohamed, loukhnati, med, kha, IT, Computer, Job, Personal">
-    <meta name="author" content="Mohamed Khalil Loukhnati">
-	<link href="style.css" rel="stylesheet">
+    <meta name="author" content="Khalil Loukhnati">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="style_main.css" rel="stylesheet">
 </head>
-<body class="bg-std-main px-4">
-    <header class="border-b-2 bg-std-main border-first-accent relative z-20 h-14">
+<body class="bg-std-main lg:px-4 w-screen">
+    <header id="header" class="border-b-2 bg-std-main border-first-accent relative z-20 h-14">
         <nav class="flex flex-row justify-center justify-items-center  mx-10 pt-2 h-full">
             <div class="flex border-first-accent content-center text-center px-5 h-10 ">
                 <a href="/" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Home</a>
@@ -23,50 +24,49 @@
                 <a href="/#title_contact" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Contact</a>
             </div>
     </header>
-    <div id="home" class="grid grid-cols-11 grid-rows-12 gap-2 h-screen px-10 -mt-20 z-10 relative bg-white">
-        <div class="flex items-center justify-center col-start-3 col-end-6 row-start-5 row-end-7">
-            <span class="text-center text-5xl font-serif"> <span class="text-first-accent">Mo</span> Loukhnati </span>
+    <div id="home" class="grid lg:grid-cols-11 lg:grid-rows-12 gap-2 h-screen  lg:px-10 z-10 relative bg-white px-0 grid-rows-phone-root-3-3-extend grid-cols-1">
+        <div class="flex items-center justify-center lg:col-start-3 lg:col-end-6 lg:row-start-5 lg:row-end-7 row-start-2">
+            <span class="text-center text-4xl  font-serif"> <span class="text-first-accent">Khalil</span> Loukhnati </span>
         </div>
-        <section class="flex justify-bottom items-end col-start-1 col-end-4 row-start-7 row-end-9 ">
-            <span class="inline-block align-bottom text-xs font-serif">
+        <section class="flex lg:justify-start lg:items-start lg:col-start-1 lg:col-end-4 lg:row-start-7 lg:row-end-9 row-start-3 items-center px-4">
+            <span class="inline-block lg:align-bottom lg:text-xs text-base font-serif text-justify align-center">
                 &emsp;I am currently a double degree student in a computer science Master's degree between <span class="text-orange-400"><a href="https://www.uni-passau.de"  target="_blank" rel="noopener noreferrer"> Universitaet Passau </a></span> and <span class="text-red-400"><a href="https://www.insa-lyon.fr" target="_blank" rel="noopener noreferrer"> Insitut National des Sciences Appliquees Lyon</a></span>, 
             Curious about solving problems and making a better world for myself, my entourage and if I am lucky the world.
             </span>
         </section>
-        <section class="flex justify-bottom items-end col-start-4 col-end-7 row-start-7 row-end-9 font-serif">
-            <span class="inline-block align-bottom text-xs" >
-             &emsp;I've studied and worked in different country ( Morocco, Germany and France ).  
+        <section class="flex lg:justify-start lg:items-start lg:col-start-4 lg:col-end-7 lg:row-start-7 lg:row-end-9 font-serif row-start-4 px-4">
+            <span class="inline-block lg:align-bottom lg:text-xs text-justify text-base">
+             &emsp;I've studied and worked in different country such as  Morocco, Germany and France.  
             Beside computer science, I have different hobbies that I plan to share with you in my website. 
-            Mainly my hobbies consist from sport activities, art ( specifically music ) activities, technical/handwork.
+            Mainly my hobbies consist from sport activities, art activities specifically music related, technical/handwork activities.
             </span>
         </section>
-        <div class="col-start-7 row-span-12 bg-[url('img/me.jpeg')] bg-origin-border bg-cover bg-first-accent bg-blend-luminosity bg-no-repeat bg-center col-span-2"></div>
-        <div class="content-center col-start-9 col-end-11 row-start-6 row-end-9 ">
+        <div class="lg:col-start-7 lg:row-span-12 row-start-1 bg-[url('img/me.jpeg')] bg-origin-border bg-cover bg-first-accent bg-blend-luminosity bg-no-repeat bg-center col-span-2"></div>
+        <div class="content-center lg:col-start-9 lg:col-end-11 lg:row-start-6 lg:row-end-9 lg:block hidden">
             <ul>
-                <li class="grid grid-cols-8"><span class="text-first-accent font-serif col-start-4 m-2 col-span-5 underline">Comptetence</span><div class="flex-1"></li>
+                <li class="grid grid-cols-8"><span class="text-first-accent font-serif col-start-4 m-2 col-span-5 underline">Competence</span><div class="flex-1"></li>
                 <li class="grid grid-cols-8"><span class="text-first-accent font-serif col-start-4 m-2 col-span-5 underline">Curiosity</span><div class="flex-1"></li>
                 <li class="grid grid-cols-8"><span class="text-first-accent font-serif col-start-4 m-2  col-span-5 underline">Innovation</span><div class="flex-1"></li>
             </ul>
         </div>
-        <div class="divider_class col-start-1 col-end-7 row-start-9 row-span-1 border-t-4 mt-2"></div>
+        <div class="divider_class lg:col-start-1 lg:col-end-7 lg:row-start-9 lg:row-span-1 border-t-4 mt-2"></div>
     </div>
-    <div class="grid grid-cols-root-2 gap-2 h-2/3-screen px-5 pb-3 z-10 relative bg-first-accent">
-        <div class="grid grid-rows-reversed-root-2-internal col-span-1">
-            <div class="row-span-1 relative overflow-hidden ">
-                <img class="absolute left-0 right-0  mx-auto w-4/5 h-250% " src="img/vim_php_brown.png"/>
+    <div class="grid lg:grid lg:grid-cols-root-2 lg:grid-rows-double-root-2 lg:grid-rows-gap-2 grid-rows-phone-root-3-3-footer lg:h-2/3-screen lg:px-5 lg:pb-3  h-screen z-10 relative bg-first-accent">
+            <div class="relative overflow-hidden lg:row-start-1 row-start-2 lg:row-end-3">
+                <img class="absolute left-0 right-0  mx-auto w-full h-250% " src="img/vim_php_brown.png"/>
             </div>
-            <div class="grid grid-cols-root-2 grid-rows-3 row-span-1 ">
-                <div class="flex items-center justify-end bg-std-main border-2 border-first-accent -mr-4 row-start-2 col-start-2 row-span-1 col-span-1 z-10 ">
+            <div class="grid lg:grid-cols-root-2 lg:grid-rows-3 lg:row-span-1  lg:row-start-3 row-start-4 ">
+                <div class="flex items-center justify-end bg-std-main border-2 border-first-accent lg:my-0 lg:-mr-4 lg:row-start-2 lg:col-start-2 lg:row-span-1 lg:col-span-1 z-10 my-5">
                     <a href="/projects/" class="font-serif text-center text-first-accent mr-2 z-10"><span>Go to projects</span></a>
                 </div>
             </div> 
-        </div> 
-        <div class="grid grid-rows-root-2-internal col-span-1 row-span-1 ">
-            <div class="flex items-end justify-center">
+        <!--<div class="grid lg:grid-rows-reversed-root-2-internal lg:col-span-1">
+        </div> -->
+            <div class="flex lg:items-end items-center justify-center lg:row-start-1 lg:col-start-2 row-start-1">
                 <span class="text-center text-second-accent text-5xl font-serif">PROJECTS</span>
             </div>     
-            <div class="flex items-center ">
-                <section class="pl-4 border-l-2 inline-block text-white text-left align-bottom text-base font-serif">
+            <div class="flex items-center lg:row-start-2 lg:col-start-2 lg:row-end-4 row-start-3">
+                <section class="px-4 lg:pr-0 lg:pl-4 lg:border-l-2 inline-block text-white text-left align-bottom text-base font-serif">
                     &emsp; Check out my Projects section where I've got a bunch of cool stuff for you to dive into! 
                     Most of my work is up on GitHub, so you can see what I've been tinkering with. 
                     You'll find a lot of my personal projects there, especially those Java ones I whipped up during my first master's. 
@@ -74,21 +74,22 @@
                     Come take a peek and see what I've been cooking up lately!
                 </section>
             </div>     
-        </div> 
+        <!--<div class="grid grid-rows-root-2-internal col-span-1 row-span-1 ">
+        </div>--> 
     </div>
     <div id="diagonalizable" class= "h-screen z-10 relative bg-white"> 
         <!--        <div class="w-[--diag-length] border-t border-black origin-top-left rotate-[--diag-angle]"> </div> --> 
         <div class="grid grid-cols-10 grid-rows-[var(--grid-top-length)_var(--grid-top-length)_var(--grid-top-length)_1fr_var(--grid-top-length)_var(--grid-top-length)_var(--grid-top-length)] h-full w-full ">
             <div class="grid grid-rows-4 col-start-1 col-span 1 row-start-4 row-span-1 ">
                    <div class="row-start-4 flex items-center justify-center">
-                       <div class="square h-3/6 rounded-full relative overflow-hidden">
+                       <div class="lg:block hidden square h-3/6 rounded-full relative overflow-hidden">
                            <a href="https://github.com/medkhabt" target="_blank" rel="noopener noreferrer">
                                <img class="absolute left-0 right-0 object-fill mx-auto  " src="img/github_transparent_blue.png"/>
                            </a>
                        </div>
                    </div>
                    <div class="row-start-3 flex items-center justify-center">
-                       <div class="square h-3/6 rounded-full bg-linkedin_blue bg-cover relative overflow-hidden">
+                       <div class="lg:block hidden square h-3/6 rounded-full bg-linkedin_blue bg-cover relative overflow-hidden">
                            <a href="https://www.linkedin.com/in/mohamed-khalil-loukhnati/" target="_blank" rel="noopener noreferrer">
                                <img class="absolute left-0 right-0  mx-auto object-cover "  src="img/linkedin_blue.png"/>
                            </a>
@@ -97,10 +98,10 @@
             </div>
             <div class="grid grid-rows-4 col-start-10 col-span 1 row-start-4 row-span-1">
                    <div class="row-start-1 flex items-center justify-center">
-                       <div class="square h-3/6 rounded-full bg-first-accent"> </div>
+                       <div class="hidden square h-3/6 rounded-full bg-first-accent"> </div>
                    </div>
                    <div class="row-start-2 flex items-center justify-center">
-                       <div class="square h-3/6 rounded-full bg-first-accent"> </div>
+                       <div class="hidden square h-3/6 rounded-full bg-first-accent"> </div>
                    </div>
             </div>
  
@@ -110,15 +111,18 @@
                 </div>
             </div>
             <div id="info_email" class="grid grid-rows-2 gap-y-2 my-2 mr-5 ml-5 col-start-3 row-start-2 row-span-2 col-end-9 ">
-                <input type="email" id="email" name="email" class="px-2  border-2 border-first-accent bg-std-main" placeholder="Email">
-                <input type="text" name="subject" class="px-2 block border-2 border-first-accent bg-std-main" placeholder="Subject.." ></input>
+                <input onclick="resetEmailFormStyle()" type="email" id="email" name="email" class="font-serif px-2  border-2 border-first-accent bg-std-main" placeHolder="Your Email">
+                <input onclick="resetEmailFormStyle()" type="text" id="subject" name="subject" class="font-serif px-2 block border-2 border-first-accent bg-std-main" placeHolder="Subject.." ></input>
             </div>
-            <div id="email-content" class="col-start-3 row-start-4 row-span-1 col-end-9 ">
-                <textarea class="px-2 h-full w-full rounded-br-lg border-2 bg-std-main border-first-accent" placeholder="Speak up your mind :)" name="email_content"></textarea>
+            <div class="col-start-3 row-start-4 row-span-1 col-end-9 ">
+                <textarea onclick="resetEmailFormStyle()" id="email-content" class="font-serif p-2 h-full w-full rounded-br-lg border-2 bg-std-main border-first-accent" placeHolder="Speak up your mind :)" name="email_content"></textarea>
             </div>
-            <div id="send_email" class="grid col-start-3 row-start-5 row-span-1 col-end-9 bg-red-400">
-            
+            <div id="send_email" onclick="submitEmail()" class="hover:transition-all transition-all ease-out  duration-150 hover:duration-200 hover:ease-in active:transition-all active:duration-200 active:ease-out  group grid col-start-7 w-3/6 row-start-5 row-span-1 items-center select-none justify-end justify-self-end col-end-9 mt-2 border-first-accent border-2 bg-std-main rounded-lg active:bg-first-accent active:border-std-main hover:w-full">
+                <p class="text-first-accent font-serif group-hover:text-first-accent mr-4 group-active:text-std-main">Send</p> 
             </div>
+            <div id="popup_email" class="hidden grid items-center justify-center row-start-5 col-start-3 select-none col-span-4 bg-second-accent mt-4 mb-2 rounded-lg mr-2 ">
+                <p class="text-center text-std-main font-serif">Email sent! :)</p>
+            </di>
         </div>
     </div>
     <div>
@@ -126,6 +130,37 @@
         <!--<a href="https://data.typeracer.com/pit/profile?user=medkhabt&ref=badge" target="_top"><img src="https://data.typeracer.com/misc/badge?user=medkhabt" border="0" alt="TypeRacer.com scorecard for user medkhabt"/></a>-->
     </div>
     <script>
+
+        const email_input = document.getElementById('email');             
+        const subject_input = document.getElementById('subject');             
+        const content_input = document.getElementById('email-content');             
+
+        const initial_email_style = {"borderColor" : email_input.style.borderColor , "backgroundColor" : email_input.style.color, "placeHolder" : email_input.placeholder }; 
+        const initial_subject_style = {"borderColor" : subject_input.style.borderColor , "backgroundColor" : subject_input.style.color, "placeHolder" : subject_input.placeholder}; 
+        const initial_content_style = {"borderColor" : content_input.style.borderColor , "backgroundColor" : content_input.style.color, "placeHolder" : content_input.placeholder } ; 
+
+        function resetEmailFormStyle(){
+            email_input.style.borderColor = initial_email_style["borderColor"]; 
+            email_input.style.backgroundColor = initial_email_style["backgroundColor"];
+            email_input.placeholder = initial_email_style["placeHolder"];
+            subject_input.style.borderColor = initial_subject_style['borderColor']; 
+            subject_input.style.backgroundColor = initial_subject_style['backgroundColor']
+            subject_input.placeholder = initial_subject_style["placeHolder"];
+            content_input.style.borderColor = initial_content_style['borderColor']; 
+            content_input.style.backgroundColor = initial_content_style['backgroundColor']
+            content_input.placeholder = initial_content_style["placeHolder"];
+        }
+        function calculateHome_Height(){
+            const home_div = document.getElementById('home');
+            const viewportHeight = window.innerHeight; 
+            const headerHeight = document.getElementById('header').clientHeight
+
+            const margin_top_home_div = window.getComputedStyle(home_div).marginTop.replace('px','');
+            //const gap_y= 2 * Number(margin_top_home_div);  
+            const projects_height= viewportHeight -  headerHeight //-  2 * Number(margin_top_home_div) // - 2 * gap_y;
+
+            document.getElementById('home').style.height = projects_height + 'px'
+        }
         function calculateDiagAngle(width, height) {
             return Math.atan(height/width) * (180/Math.PI)
         }
@@ -134,6 +169,64 @@
         }
         function calculateTopRowGrid(width, top_above_diag_corner_angle){
             return width * Math.tan((top_above_diag_corner_angle * Math.PI) / 180);
+        }
+        function validEmailFormState(email, subject, content, popup){
+            ret_value =  true; 
+            validEmail = String(email.value)
+                .toLowerCase()
+                .match(
+                  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                );
+//            console.log("size of subject is " + subject.value.length + " and size of the content is " + content.value.length)
+            if (!validEmail) {
+                email.style.background = "#FF9494"; 
+                email.style.borderColor = "red"; 
+                email.placeholder = "Wrong Email format"; 
+                ret_value = false; 
+            }
+            if(!subject.value || subject.value.length > 500) {
+                subject.style.background = "#FF9494"; 
+                if(!subject.value) {
+                    subject.placeholder = "Empty"; 
+                }
+                subject.style.borderColor = "red"; 
+                ret_value = false;
+            }
+            if(!content.value || content.value.length > 500000) {
+                content.style.background = "#FF9494"; 
+                content.style.borderColor = "red"; 
+                if(!content.value) {
+                    content.placeholder = "Empty"; 
+                }
+                ret_value = false;
+            }
+
+            return ret_value; 
+        } 
+        async function submitEmail(){
+            const email_popup = document.getElementById('popup_email'); 
+            const value_to_send = { 
+                "emailAddress": email_input.value, 
+                "subject": subject_input.value, 
+                "content": content_input.value, 
+            }
+            if(!validEmailFormState(email_input, subject_input, content_input, email_popup)){
+                return ; 
+            }
+                
+            fetch('https://www.medkha.com/api/send', {
+                method: 'POST',
+                body: JSON.stringify(value_to_send), 
+                headers: {
+                    'Content-Type' : 'application/json'
+                }
+            }); 
+            email_popup.style.display = "block"
+            setTimeout(()=>{
+                email_popup.style.display = "none"
+            }, "5000")
+            subject_input.value = ""; 
+            content_input.value = ""; 
         }
         function updateGrid(){
             const diag_div = document.getElementById('diagonalizable');
@@ -157,7 +250,9 @@
             
         }
         window.addEventListener('load', updateGrid)
+        window.addEventListener('load', calculateHome_Height)
         window.addEventListener('resize', updateGrid)
+        window.addEventListener('resize', calculateHome_Height)
 
     </script>
 </body>
