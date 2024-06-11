@@ -6,7 +6,7 @@
     <meta name="keywords" content="loukhnati, mohamed, loukhnati, med, kha, IT, Computer, Job, Personal">
     <meta name="author" content="Khalil Loukhnati">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="style_main.css" rel="stylesheet">
+	<link href="style_std.css" rel="stylesheet">
 </head>
 <body class="bg-std-main lg:px-4 w-screen">
     <header id="header" class="border-b-2 bg-std-main border-first-accent relative z-20 h-14">
@@ -79,8 +79,8 @@
     </div>
     <div id="diagonalizable" class= "h-screen z-10 relative bg-white"> 
         <!--        <div class="w-[--diag-length] border-t border-black origin-top-left rotate-[--diag-angle]"> </div> --> 
-        <div class="grid grid-cols-10 grid-rows-[var(--grid-top-length)_var(--grid-top-length)_var(--grid-top-length)_1fr_var(--grid-top-length)_var(--grid-top-length)_var(--grid-top-length)] h-full w-full ">
-            <div class="grid grid-rows-4 col-start-1 col-span 1 row-start-4 row-span-1 ">
+        <div class="grid grid-cols-1 grid-rows-[100px_100px_1fr_50px_50px_50px_50px] lg:grid-cols-10 lg:grid-rows-[var(--grid-top-length)_var(--grid-top-length)_var(--grid-top-length)_1fr_var(--grid-top-length)_var(--grid-top-length)_var(--grid-top-length)] h-full w-full ">
+            <div class="grid lg:grid-rows-4 lg:col-start-1 lg:col-span 1 lg:row-start-4 lg:row-span-1 ">
                    <div class="row-start-4 flex items-center justify-center">
                        <div class="lg:block hidden square h-3/6 rounded-full relative overflow-hidden">
                            <a href="https://github.com/medkhabt" target="_blank" rel="noopener noreferrer">
@@ -88,7 +88,7 @@
                            </a>
                        </div>
                    </div>
-                   <div class="row-start-3 flex items-center justify-center">
+                   <div class="lg:row-start-3 flex items-center justify-center">
                        <div class="lg:block hidden square h-3/6 rounded-full bg-linkedin_blue bg-cover relative overflow-hidden">
                            <a href="https://www.linkedin.com/in/mohamed-khalil-loukhnati/" target="_blank" rel="noopener noreferrer">
                                <img class="absolute left-0 right-0  mx-auto object-cover "  src="img/linkedin_blue.png"/>
@@ -96,7 +96,7 @@
                        </div>
                    </div>
             </div>
-            <div class="grid grid-rows-4 col-start-10 col-span 1 row-start-4 row-span-1">
+            <div class="grid lg:grid-rows-4 lg:col-start-10 lg:col-span-1 lg:row-start-4 lg:row-span-1">
                    <div class="row-start-1 flex items-center justify-center">
                        <div class="hidden square h-3/6 rounded-full bg-first-accent"> </div>
                    </div>
@@ -105,24 +105,24 @@
                    </div>
             </div>
  
-            <div id="title_contact" class="grid grid-rows-6 col-start-2 row-start-4 items-center justify-center ">
-                <div class="row-span-3 -rotate-90 flex"> 
+            <div id="title_contact" class="row-start-1 grid lg:grid-rows-6 lg:col-start-2 lg:row-start-4 items-center justify-center ">
+                <div class="lg:row-span-3 lg:-rotate-90 lg:flex justify-center items-center"> 
                     <h1 class="text-4xl text-second-accent font-serif"><nobr>CONTACT ME</nobr></h1>
                 </div>
             </div>
-            <div id="info_email" class="grid grid-rows-2 gap-y-2 my-2 mr-5 ml-5 col-start-3 row-start-2 row-span-2 col-end-9 ">
+            <div id="info_email" class="grid row-start-2 lg:grid-rows-2 gap-y-2 my-2 mr-5 ml-5 lg:col-start-3 lg:row-start-2 lg:row-span-2 lg:col-end-9 ">
                 <input onclick="resetEmailFormStyle()" type="email" id="email" name="email" class="font-serif px-2  border-2 border-first-accent bg-std-main" placeHolder="Your Email">
                 <input onclick="resetEmailFormStyle()" type="text" id="subject" name="subject" class="font-serif px-2 block border-2 border-first-accent bg-std-main" placeHolder="Subject.." ></input>
             </div>
-            <div class="col-start-3 row-start-4 row-span-1 col-end-9 ">
+            <div class="row-start-3 lg:col-start-3 lg:row-start-4 lg:row-span-1 lg:col-end-9 ">
                 <textarea onclick="resetEmailFormStyle()" id="email-content" class="font-serif p-2 h-full w-full rounded-br-lg border-2 bg-std-main border-first-accent" placeHolder="Speak up your mind :)" name="email_content"></textarea>
             </div>
-            <div id="send_email" onclick="submitEmail()" class="hover:transition-all transition-all ease-out  duration-150 hover:duration-200 hover:ease-in active:transition-all active:duration-200 active:ease-out  group grid col-start-7 w-3/6 row-start-5 row-span-1 items-center select-none justify-end justify-self-end col-end-9 mt-2 border-first-accent border-2 bg-std-main rounded-lg active:bg-first-accent active:border-std-main hover:w-full">
-                <p class="text-first-accent font-serif group-hover:text-first-accent mr-4 group-active:text-std-main">Send</p> 
+            <div id="send_email" onclick="submitEmail()" class="lg:hover:transition-all transition-all ease-out  w-3/6 duration-150 hover:duration-200 hover:ease-in active:transition-all active:duration-200 active:ease-out  group grid lg:row-start-5 lg:col-start-7 col-span-3 lg:w-3/6  items-center select-none justify-center lg:justify-end justify-self-center lg:justify-self-end lg:col-end-9 mt-2 border-first-accent border-2 bg-std-main rounded-lg active:bg-first-accent active:border-std-main lg:active:w-full active:w-5/6 lg:hover:w-full">
+                <p class="text-first-accent font-serif group-hover:text-first-accent lg:mr-4 group-active:text-std-main">Send</p> 
             </div>
-            <div id="popup_email" class="hidden grid items-center justify-center row-start-5 col-start-3 select-none col-span-4 bg-second-accent mt-4 mb-2 rounded-lg mr-2 ">
+            <div id="popup_email" class="hidden grid items-center justify-center  select-none  row-start-5 lg:col-span-4 bg-second-accent mt-4 mb-2 rounded-lg mr-2 ">
                 <p class="text-center text-std-main font-serif">Email sent! :)</p>
-            </di>
+            </div>
         </div>
     </div>
     <div>

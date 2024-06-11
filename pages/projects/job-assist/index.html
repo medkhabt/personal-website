@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Job Assist</title>
+        <meta name="description" content="Portfolio website">
+        <meta name="keywords" content="loukhnati, mohamed, loukhnati, med, kha, IT, Computer, Job, Personal">
+        <meta name="author" content="Mohamed Khalil Loukhnati">
+        <link href="../../style_std.css" rel="stylesheet">
+    </head>
+    <body  class="bg-std-main px-4 font-serif ">
+        <header id="header" class="border-b-2 bg-std-main border-first-accent relative z-20 h-14">
+            <nav class="flex flex-row justify-center justify-items-center  mx-10 pt-2 h-full">
+                <div class="flex border-first-accent content-center text-center px-5 h-10 ">
+                    <a href="/" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Home</a>
+                </div>
+                <div class="flex border-l-2 border-first-accent content-center text-center px-5 h-10 ">
+                    <a href="/projects" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Projects</a>
+                </div>
+                <div class="flex border-l-2 border-first-accent content-center text-center px-5 h-10 ">
+                    <a href="/blogs/" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Blogs</a>
+                </div>
+                <div class="flex border-l-2 border-first-accent content-center text-center px-5 h-10 ">
+                    <a href="/#title_contact" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Contact</a>
+                </div>
+        </header>
+
+        <div id="project-canvas" class="mb-2 mx-2 bg-white grid grid-cols-root-3">
+            <div class="col-start-1 h-full grid grid-rows-root-2-internal grid-cols-root-3 mb-10">
+                <div class="row-start-1 col-start-1 col-span-2 flex items-center justify-center">
+                    <h1 class="text-4xl text-second-accent">Job assist</h1>
+                </div>
+                <div class="row-start-2 ml-10 mr-5 flex items-start text-sm">
+                    <p class="text-justify">
+                        &emsp;My project aims to streamline the job application process by enabling me to focus on the critical components while minimizing attention to redundant information. 
+                        <br><br>&emsp;The current version of the project emphasizes the creation of motivation letters, offering customizable configurations and utilizing existing LaTeX templates. 
+                        It also includes features for managing applications, viewing PDF generation, and producing final PDF documents. 
+                        <br><br>&emsp;Subsequent versions of the project will extend its focus to the CV.
+                        I am still refining my LaTeX template to a satisfactory level, but once completed, it will allow for specifying multiple project experiences in the configuration. 
+                        Users will be able to select the projects that best match the job offer, or even have the system automatically detect and suggest the most relevant projects based on the wording in the job description. 
+                        Additionally, the system will enable defining the number of projects or experiences per section in the CV, ensuring the most relevant information is highlighted, even if fewer related projects are available.
+                    </p>  
+                </div>
+                <div class="row-start-2 col-start-2 ml-5 mr-10 flex items-start text-sm">
+                    <p class="text-justify">
+                    &emsp;At the core of the project, and the technologies chosen, is my curiosity about various tools and techniques.
+                    It all began with an interest in Bash scripting, which expanded when I came across an opportunity to explore XSLT. 
+                    I thought, why not experiment with it? This curiosity extended to autocompletion, where I wondered if I could create a customized autocompletion feature for my commands. From there, I discovered new technologies and capabilities, driving the continuous evolution and enhancement of my project.
+                    </p>
+                </div>
+            </div> 
+            <div class="col-start-2 h-full grid mr-10 mb-10 reversed-grid-rows-root-2-internal">
+                <div class="row-start-1 grid grid-rows-[1fr_9px_4fr] mb-2">
+                    <div id="video-progress" class="row-start-2 w-full h-2 bg-std-main border border-first-accent rounded-xl shadow-sm my-0.5 stretch " >
+                            <div id="bar" class="w-1/6 h-full bg-first-accent"></div> 
+                    </div>
+                    <video id="player" class="self-center row-start-3" muted >
+                        <source src="../../img/projects/job-apply.mkv" type="video/mp4"/> 
+                    </video> 
+                </div>
+                <div class="row-start-2 grid grid-cols-root-2">
+                    <div id="language-logos" class=" grid grid-cols-2 grid-rows-2 items-center ">
+                        <img class="languages object-cover w-full h-0 col-start-1 row-start-1 overflow-hidden justify-self-center" src="../../img/xml_lhc_color.png"/>
+                        <p class="col-start-2 row-start-1 justify-self-start text-first-accent">XML</p>
+                        <img class="languages object-cover h-0 col-start-1 row-start-2 overflow-hidden justify-self-center" src="../../img/bash_blue_exclusion.png"/>
+                        <p class="col-start-2 row-start-2 justify-self-start text-first-accent">Bash/Shell</p>
+                    </div> 
+                    <div class="border-l-2 border-first-accent pl-2 grid grid-rows-3">
+                        <div class="row-start-3 flex items-center">
+                            <a href="https://github.com/medkhabt/coverLetters" target="_blank" rel="noopener noreferrer" class="pl-20 pr-4 py-2 border text-white bg-first-accent "><span>Source</span></a>
+                        </div>
+                    </div> 
+                </div>
+            </div> 
+        </div>
+        <script>
+            const player = document.getElementById("player"); 
+            const bar = document.getElementById("bar");
+            const loader = document.getElementById("video-progress");
+            function render_project_canvas(){
+                const viewportHeight = window.innerHeight; 
+                const project_canvas = document.getElementById('project-canvas'); 
+                const header_height =  document.getElementsByTagName('header')[0].offsetHeight; 
+                const style_project_canvas = window.getComputedStyle(project_canvas); 
+                const margin_padding_y= 
+                    Number(style_project_canvas.marginTop.replace('px','')) + 
+                    Number(style_project_canvas.marginBottom.replace('px', '')) + 
+                    Number(style_project_canvas.paddingTop.replace('px', '')) + 
+                    Number(style_project_canvas.paddingBottom.replace('px', ''));
+                // remove the margin and padding from the height 
+                project_canvas.style.height = (viewportHeight - header_height - margin_padding_y) + 'px'; 
+            }
+            function video_handler(){
+                player.playbackRate = 1.5;
+                player.addEventListener('timeupdate', move ,false);
+                player.play(); 
+//                loader.style.width = player.clientHeight + 'px';
+//                position_loading();
+                player.addEventListener('ended', () => {player.play()}, false)
+                
+            }
+            function position_loading(){
+               loader.style.transform= 'translateY('+ loader.getBoundingClientRect().bottom - player.getBoudingClientRect().bottom  + 'px)';
+            }
+            function move() {
+               bar.style.width = player.currentTime * 100  / player.duration + "%";
+            }
+            function language_logos_handler(){
+                const logo_div = document.getElementById("language-logos")
+                const heigth_logo_div = logo_div.offsetHeight;
+                console.log("heights logo_div: " + logo_div)
+                const number_langs = 2;
+                for(let lang of logo_div.getElementsByTagName('img')){
+                    console.log("lang style: " + heigth_logo_div / number_langs)
+                    lang.style.height = heigth_logo_div / number_langs + 'px'; 
+                }
+                
+            } 
+            window.addEventListener('load', render_project_canvas);
+            window.addEventListener('load', video_handler);
+            window.addEventListener('load', language_logos_handler);
+
+            window.addEventListener('resize', render_project_canvas);
+            window.addEventListener('resize', language_logos_handler);
+        </script>
+    </body>
+</html>
