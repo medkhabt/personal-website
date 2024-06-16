@@ -120,7 +120,7 @@
             <div id="send_email" onclick="submitEmail()" class="lg:hover:transition-all transition-all ease-out  w-3/6 duration-150 hover:duration-200 hover:ease-in active:transition-all active:duration-200 active:ease-out  group grid lg:row-start-5 lg:col-start-7 col-span-3 lg:w-3/6  items-center select-none justify-center lg:justify-end justify-self-center lg:justify-self-end lg:col-end-9 mt-2 border-first-accent border-2 bg-std-main rounded-lg active:bg-first-accent active:border-std-main lg:active:w-full active:w-5/6 lg:hover:w-full">
                 <p class="text-first-accent font-serif group-hover:text-first-accent lg:mr-4 group-active:text-std-main">Send</p> 
             </div>
-            <div id="popup_email" class="hidden grid items-center justify-center  select-none  row-start-5 lg:col-span-4 bg-second-accent mt-4 mb-2 rounded-lg mr-2 ">
+            <div id="popup_email" class="hidden grid items-center justify-center  select-none lg:col-start-3  row-start-5 lg:col-span-4 bg-second-accent mt-4 mb-2 rounded-lg mr-2 ">
                 <p class="text-center text-std-main font-serif">Email sent! :)</p>
             </div>
         </div>
@@ -214,7 +214,7 @@
                 return ; 
             }
                 
-            fetch('https://www.medkha.com/api/send', {
+            fetch('https://www.medkha.com/api/mail/send', {
                 method: 'POST',
                 body: JSON.stringify(value_to_send), 
                 headers: {
