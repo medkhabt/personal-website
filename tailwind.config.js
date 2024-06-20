@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./**/*.html'],
+  content: ['./pages/**/*.html'],
   theme: {
     extend: {
         screens: {
@@ -29,6 +29,7 @@ module.exports = {
             '50%' : '50%', 
             '75%' : '75%', 
             '25%' : '25%',
+            '26%' : '26%',
             '100%' : '100%',
             '400%' : '400%',
             '300%' : '300%',

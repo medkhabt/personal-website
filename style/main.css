@@ -14,3 +14,9 @@ html:focus-within{
 textarea {
     resize: none;
 }
+
+.current-char {
+  background-color: yellow;
+  color: green;
+  text-decoration: underline
+}
