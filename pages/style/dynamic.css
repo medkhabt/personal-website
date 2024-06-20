@@ -1,0 +1,11 @@
+
+.current-char {
+  background-color: green;
+  color: white;
+  text-decoration: underline
+}
+.error-char{
+  background-color: red;
+  color: white;
+  text-decoration: underline
+}
