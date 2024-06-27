@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MedkhaBT</title>
+    <meta name="description" content="Portfolio website">
+    <meta name="keywords" content="loukhnati, mohamed, loukhnati, med, kha, IT, Computer, Job, Personal">
+    <meta name="author" content="Khalil Loukhnati">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="../style_std1.css" rel="stylesheet">
+</head>
+<body class="bg-std-main lg:px-4 w-screen">
+    <header id="header" class="border-b-2 bg-std-main border-first-accent relative z-20 h-14">
+        <nav class="flex flex-row justify-center justify-items-center  mx-10 pt-2 h-full">
+            <div class="flex border-first-accent content-center text-center px-5 h-10 ">
+                <a href="/" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Home</a>
+            </div>
+            <div class="flex border-l-2 border-first-accent content-center text-center px-5 h-10 ">
+                <a href="/projects" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Projects</a>
+            </div>
+            <div class="flex border-l-2 border-first-accent content-center text-center px-5 h-10 ">
+                <a href="blogs/" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Blogs</a>
+            </div>
+            <div class="flex border-l-2 border-first-accent content-center text-center px-5 h-10 ">
+                <a href="/#title_contact" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Contact</a>
+            </div>
+    </header>
+    <div id="home" class="grid grid-rows-double-root-2 bg-red-400  w-full">
+        <div class="bg-yellow-200">
+            Log In 
+        </div>
+        <div class="bg-yellow-400">
+            <input type="text" id="username"></input> 
+            <input type="password" id="password"></input> 
+        </div>
+        <div class="bg-yellow-500">
+            <div class="bg-blue-200 w-3/6" onclick="login()"> submit </div>
+        </div>
+             
+    </div>       
+    <script>
+        function calculateHome_Height(){
+            const home_div = document.getElementById('home');
+            const viewportHeight = window.innerHeight; 
+            const headerHeight = document.getElementById('header').clientHeight
+
+            const margin_top_home_div = window.getComputedStyle(home_div).marginTop.replace('px','');
+            //const gap_y= 2 * Number(margin_top_home_div);  
+            const projects_height= viewportHeight -  headerHeight //-  2 * Number(margin_top_home_div) // - 2 * gap_y;
+
+            document.getElementById('home').style.height = projects_height + 'px'
+        }
+        async function login(){
+            const username = document.getElementById('username').value; 
+            const password = document.getElementById('password').value; 
+            const value_to_send = {
+                    "username" : username, 
+                    "password" : password 
+            }
+            console.log(JSON.stringify(value_to_send))
+            
+            response = await fetch('/api/login', {
+                method: 'POST',
+                body: JSON.stringify(value_to_send), 
+                headers: {
+                    'Content-Type' : 'application/json'
+                }
+            }); 
+            token = (await response.json())['token']
+            console.log("the token is " + token)
+            //TODO change this to a backend call that will redirect to the right page based on the validity of the token
+            if(token != undefined){
+                sessionStorage.setItem("token", token);
+                console.log("session storage of token is " + sessionStorage.getItem("token"))
+                window.location.href="/typing"
+            } else {
+                console.log("Login failed") 
+            }
+                 
+        }
+
+        window.addEventListener('load', calculateHome_Height)
+        window.addEventListener('resize', calculateHome_Height)
+
+    </script>
+</body>
+</html>
