@@ -39,7 +39,8 @@ jobs:
         run: |
           cat > .docker/.env <<EOF
           WEBSITE_IMAGE=#{Website.Image}
-          WEBSITE_TAG=latest
+          #TODO: fix this later
+          WEBSITE_TAG=0.1.0
           EOF
 
       - name: Login to Octopus
