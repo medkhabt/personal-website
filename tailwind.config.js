@@ -19,7 +19,7 @@ module.exports = {
         },
         backgroundImage: {
             // 'profil' : "linear-gradient(to right bottom, rgba('#7ed56f',0.8), rgba('#28b485',0.8)), url('resources/img/me.jpeg')", 
-            'profil' : "url('./pages/img/me.jpeg')", 
+            'profil' : "url('../img/me.jpeg')", 
             'githubbl' : "url('resources/img/github_transparent_blue.png')",
             'githubbr' : "url('resources/img/github_transparent_brown.png')",
             'linkedinbl' : "url('resources/img/linkedin_blue.png')",
