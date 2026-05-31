@@ -37,8 +37,7 @@ jobs:
         run: |
           cat > .docker/.env <<EOF
           WEBSITE_IMAGE=#{Website.Image}
-          WEBSITE_TAG=#{Website.Tag}
-          WEBSITE_DOMAIN=#{Website.Domain}
+          WEBSITE_TAG=$env.VERSION
           EOF
 
       - name: Login to Octopus
