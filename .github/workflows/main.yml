@@ -24,8 +24,11 @@ jobs:
         run: |
           VERSION=$(node -p "require('./package.json').version")
           echo "VERSION=$VERSION" >> $GITHUB_ENV
+
       - name: Build and Push the Image to Docker Hub
         uses: docker/build-push-action@v7
+        env:
+          DOCKER_BUILD_RECORD_UPLOAD: false
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.VERSION }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/website:${{ env.VERSION }}
