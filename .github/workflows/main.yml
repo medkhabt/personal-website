@@ -7,6 +7,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     env:
       OCTOPUS_SPACE: 'Default'
     steps:
@@ -60,7 +62,6 @@ jobs:
       - name: Push a package to Octopus Deploy
         uses: OctopusDeploy/push-package-action@v4
         with:
-          version: ${{ env.VERSION }}
           packages: |
             packaging/*
 
