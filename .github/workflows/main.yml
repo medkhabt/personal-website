@@ -40,8 +40,7 @@ jobs:
         run: |
           cat > .docker/.env <<EOF
           WEBSITE_IMAGE=#{Website.Image}
-          #TODO: fix this later
-          WEBSITE_TAG=0.1.0
+          WEBSITE_TAG=$VERSION
           EOF
 
       - name: Login to Octopus
@@ -63,6 +62,7 @@ jobs:
       - name: Push a package to Octopus Deploy
         uses: OctopusDeploy/push-package-action@v4
         with:
+          version: ${{ env.VERSION }}
           packages: |
             packaging/*
 
@@ -70,3 +70,5 @@ jobs:
         uses: OctopusDeploy/create-release-action@v4
         with:
           project: 'Personal Website'
+          package_version: ${{ env.VERSION }}
+          release_number: ${{ env.VERSION }}
