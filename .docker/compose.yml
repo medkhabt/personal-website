@@ -1,0 +1,25 @@
+---
+services:
+  website:
+    image: ${WEBSITE_IMAGE}:${WEBSITE:TAG}
+    container_name: website
+    restart: unless-stopped
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+
+      - "traefik.http.routers.website.rule=Host(`medkha.com`)
+        || Host(`www.medkha.com`)"
+      - "traefik.http.routers.website.entrypoints=websecure"
+      - "traefik.http.routers.website.tls=true"
+      - "traefik.http.routers.website.tls.certresolver=letsencrypt"
+
+      - "traefik.http.services.website.loadbalancer.server.port=80"
+
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

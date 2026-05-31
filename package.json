@@ -1,4 +1,5 @@
 {
+    "version": "0.1.0",
     "scripts": {
         "dev": "tailwindcss -c ./tailwind.config.js -i ./style/main.css -o ./pages/style/app.css --watch",
         "build": "tailwindcss -c tailwind.config.js  -i ./style/main.css -o ./pages/style/app.css "
