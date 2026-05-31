@@ -32,3 +32,35 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/website:${{ env.VERSION }}
+
+      - name: Create Env file for Octopus
+        run: |
+          cat > .docker/.env <<EOF
+          WEBSITE_IMAGE=#{Website.Image}
+          WEBSITE_TAG=#{Website.Tag}
+          WEBSITE_DOMAIN=#{Website.Domain}
+          EOF
+
+      - name: Login to Octopus
+        id: login_to_octopus
+        uses: OctopusDeploy/login@v2
+        with:
+          server: ${{ secrets.OCTOPUS_URL }}
+          api_key: ${{ secrets.OCTOPUS_API_KEY }}
+
+      - name: Package to Octopus Deploy
+        uses: OctopusDeploy/create-zip-package-action@v4
+        with:
+          package_id: 'website'
+          version: ${{ env.VERSION }}
+          output_folder: './packaging'
+          base_path: .docker
+          files: |
+            *.*
+      - name: Push a package to Octopus Deploy 🐙
+        uses: OctopusDeploy/push-package-action@v4
+        env:
+          OCTOPUS_SPACE: 'Default'
+        with:
+          packages: |
+            packaging/*
