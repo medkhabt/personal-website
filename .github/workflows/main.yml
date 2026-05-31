@@ -56,10 +56,15 @@ jobs:
           base_path: .docker
           files: |
             *.*
-      - name: Push a package to Octopus Deploy 🐙
+      - name: Push a package to Octopus Deploy
         uses: OctopusDeploy/push-package-action@v4
         env:
           OCTOPUS_SPACE: 'Default'
         with:
           packages: |
             packaging/*
+
+      - name: Create a release in Octopus Deploy
+        uses: OctopusDeploy/create-release-action@v4
+        with:
+          project: 'Personal Website'
