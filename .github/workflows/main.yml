@@ -9,6 +9,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      OCTOPUS_SPACE: 'Default'
     steps:
       - uses: actions/checkout@v6
       - name: Login to Docker Hub
@@ -58,8 +60,6 @@ jobs:
             *.*
       - name: Push a package to Octopus Deploy
         uses: OctopusDeploy/push-package-action@v4
-        env:
-          OCTOPUS_SPACE: 'Default'
         with:
           packages: |
             packaging/*
