@@ -1,7 +1,7 @@
 ---
 services:
   website:
-    image: ${WEBSITE_IMAGE}:${WEBSITE:TAG}
+    image: ${WEBSITE_IMAGE}:${WEBSITE_TAG}
     container_name: website
     restart: unless-stopped
 
