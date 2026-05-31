@@ -79,7 +79,6 @@ jobs:
         with:
           tag_name: ${{ env.VERSION }}
           release_name: Release ${{ env.VERSION }}
-          body: |
-            cat ReleaseNotes.md
+          body_path: ReleaseNotes.md
           draft: false
           prerelease: false
