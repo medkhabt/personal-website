@@ -6,7 +6,7 @@ COPY package.json package-lock.json ./
 RUN npm ci --no-audit --no-fund --loglevel=verbose
 
 COPY . .
-Run npm run build 
+RUN npm run build 
 
 FROM nginx:alpine
 COPY --from=build /app/pages/ /usr/share/nginx/html
