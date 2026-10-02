@@ -56,7 +56,7 @@ jobs:
           package_id: 'website'
           version: ${{ env.VERSION }}
           output_folder: './packaging'
-          base_path: .docker
+          base_path: .kube
           files: |
             *.*
       - name: Push a package to Octopus Deploy
@@ -68,7 +68,7 @@ jobs:
       - name: Create a release in Octopus Deploy
         uses: OctopusDeploy/create-release-action@v4
         with:
-          project: 'Personal Website'
+          project: 'PersonalWebsite'
           package_version: ${{ env.VERSION }}
           release_number: ${{ env.VERSION }}
 
