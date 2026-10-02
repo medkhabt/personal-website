@@ -81,6 +81,7 @@ jobs:
           project: 'PersonalWebsite'
           package_version: ${{ env.VERSION }}
           release_number: ${{ env.VERSION }}
+          git_ref: ${{ github.ref_name }}
 
       - name: Create Release
         uses: actions/create-release@v1
