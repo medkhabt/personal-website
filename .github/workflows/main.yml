@@ -75,6 +75,8 @@ jobs:
 
       - name: Create a release in Octopus Deploy
         uses: OctopusDeploy/create-release-action@v4
+        env:
+          NODE_EXTRA_CA_CERTS: ${{ runner.temp }}/octopus-ca.pem
         with:
           project: 'PersonalWebsite'
           package_version: ${{ env.VERSION }}
