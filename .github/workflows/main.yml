@@ -60,8 +60,15 @@ jobs:
           base_path: .kube
           files: |
             *.*
+
+      - name: Install Octopus CA certificate
+        run: |
+          echo "${{ secrets.OCTOPUS_CA_CERT }}" > "$RUNNER_TEMP/octopus-ca.pem"
+
       - name: Push a package to Octopus Deploy
         uses: OctopusDeploy/push-package-action@v4
+        env:
+          NODE_EXTRA_CA_CERTS: ${{ runner.temp }}/octopus-ca.pem
         with:
           packages: |
             packaging/*
