@@ -1,0 +1,3 @@
+variable "namespace" {
+    value "website-#{Octopus.Environment.Name}" {}
+}
