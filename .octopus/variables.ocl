@@ -1,3 +1,18 @@
+variable "env" {
+    value "test" {
+        environment = ["development"]
+    }
+
+    value "staging" {
+        environment = ["staging"]
+    }
+
+    value "prod" {
+        description = ""
+        environment = ["production"]
+    }
+}
+
 variable "namespace" {
-    value "website-#{Octopus.Environment.Name}" {}
+    value "website-#{env}" {}
 }
