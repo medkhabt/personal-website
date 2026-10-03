@@ -12,7 +12,7 @@ step "deploy-kubernetes-yaml" {
             Octopus.Action.Kubernetes.ServerSideApply.Enabled = "True"
             Octopus.Action.Kubernetes.ServerSideApply.ForceConflicts = "True"
             Octopus.Action.KubernetesContainers.CustomResourceYamlFileName = "deployment.yaml"
-            Octopus.Action.KubernetesContainers.Namespace = "website-test"
+            Octopus.Action.KubernetesContainers.Namespace = "#{namespace}"
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "octopus-server-built-in"
             Octopus.Action.Package.PackageId = "website"
