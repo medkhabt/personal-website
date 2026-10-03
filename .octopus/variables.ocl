@@ -16,3 +16,13 @@ variable "env" {
 variable "namespace" {
     value "website-#{env}" {}
 }
+
+variable "host-prefix" {
+    value "www" {
+        environment = ["development", "production"]
+    }
+
+    value "www.staging" {
+        environment = ["staging"]
+    }
+}
