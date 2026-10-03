@@ -18,11 +18,16 @@ variable "namespace" {
 }
 
 variable "host-prefix" {
-    value "www" {
-        environment = ["development", "production"]
-    }
-
     value "www.staging" {
         environment = ["staging"]
+    }
+
+    value "www" {
+        environment = ["production"]
+    }
+
+    value "www.test" {
+        description = ""
+        environment = ["development"]
     }
 }
