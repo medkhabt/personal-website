@@ -1,0 +1,33 @@
+variable "env" {
+    value "test" {
+        environment = ["development"]
+    }
+
+    value "staging" {
+        environment = ["staging"]
+    }
+
+    value "prod" {
+        description = ""
+        environment = ["production"]
+    }
+}
+
+variable "namespace" {
+    value "website-#{env}" {}
+}
+
+variable "host-prefix" {
+    value "www.staging" {
+        environment = ["staging"]
+    }
+
+    value "www" {
+        environment = ["production"]
+    }
+
+    value "www.test" {
+        description = ""
+        environment = ["development"]
+    }
+}
