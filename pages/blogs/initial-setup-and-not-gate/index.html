@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Initial setup and NOT Logic Gate</title>
+        <meta name="description" content="Portfolio website">
+        <meta name="keywords" content="loukhnati, mohamed, loukhnati, med, kha, IT, Computer, Job, Personal">
+        <meta name="author" content="Mohamed Khalil Loukhnati">
+        <link href="../../style/app.css" rel="stylesheet">
+    </head>
+    <body>
+        <header class="border-b-2 bg-std-main border-first-accent relative z-20 h-14">
+            <nav class="flex flex-row justify-center justify-items-center  mx-10 pt-2 h-full">
+                <div class="flex border-first-accent content-center text-center px-5 h-10 ">
+                    <a href="/" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Home</a>
+                </div>
+                <div class="flex border-l-2 border-first-accent content-center text-center px-5 h-10 ">
+                    <a href="/projects" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Projects</a>
+                </div>
+                <div class="flex border-l-2 border-first-accent content-center text-center px-5 h-10 ">
+                    <a href="/blogs/" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Blogs</a>
+                </div>
+                <div class="flex border-l-2 border-first-accent content-center text-center px-5 h-10 ">
+                    <a href="/#title_contact" class="flex font-serif items-center text-first-accent justify-center h-full w-full">Contact</a>
+                </div>
+        </header>
+        <div class="flex flex-row gap-x-2 flex-nowrap mx-4 my-4">
+            <div class="flex justify-center items-center">
+                <h1 class="text-2xl font-bold text-second-accent">Blogs</h1>
+            </div>
+            <div class="flex basic-2 justify-center items-center">
+                <svg class="stroke-second-accent" height="20" width="15" viewBox="0 0 100 100" >
+                    <line
+                            x1="20"
+                            y1="10"
+                            x2="90"
+                            y2="50"
+                            stroke-width="15"
+                            />
+                    <line
+                            x1="90"
+                            y1="50"
+                            x2="20"
+                            y2="90"
+                            stroke-width="15"
+                            />
+                </svg>
+            </div>
+            <div class="flex justify-center items-center">
+                <h2 class="text-2xl font-bold text-second-accent">From transistors to a small computer</h1>
+            </div>
+            <div class="flex basic-2 justify-center items-center">
+                <svg class="stroke-second-accent" height="20" width="15" viewBox="0 0 100 100" >
+                    <line
+                            x1="20"
+                            y1="10"
+                            x2="90"
+                            y2="50"
+                            stroke-width="15"
+                            />
+                    <line
+                            x1="90"
+                            y1="50"
+                            x2="20"
+                            y2="90"
+                            stroke-width="15"
+                            />
+                </svg>
+            </div>
+            <div class="flex justify-center items-center">
+                <h1 class="text-4xl font-semibold text-first-accent">Inital setup and NOT Logic Gate</h1>
+            </div>
+        </div>
+
+
+        <div class= "main-blog-content">
+            <div class= "intro m-4 p-2 bg-std-main">
+                <p class ="my-1 font-medium hover:font-bold">For sometime, I had this idea of working with electronical devices, mainly working on small projects that could be
+                usefull at home, I came across a video of a guy that explains how a computer works on the hardware level in a simplified
+                way. I have some knowledge from highschool about logic gates and electronics, however it was mostly theorical and not that deep.
+                We were more focused on creating schemas using Proteus. Now I am starting my career in Devops and I also studied computer science after 
+                high school with a focus more on the software side. I always had this gap between the two worlds of electronics/hardware and software.
+                Lately i got the motivation to start working on this long-term project of making a tiny computer, not directly, but by building all 
+                necessary components and then using premade version of the components and work on the next level of abstraction.
+                </p>
+                <p class="my-1 font-medium hover:font-bold">In this blog, i will talk about my first buy of components to start working on my journey, and on how to implement NOT Logic gate 
+                with a transistor</p>
+            </div>
+
+            <div class="m-4">
+                <h3 class="text-2xl font-semibold">Initial Buy:</h3>
+                <ul class="list-disc list-inside ml-10">
+                    <li class="hover:font-bold">Breadboards.</li>
+                    <li class="hover:font-bold">Male wires different lenghts.</li>
+                    <li class="hover:font-bold">Usb male adapters with screw connections. </li>
+                    <li class="hover:font-bold">NPN tansistors (2N3904).</li>
+                    <li class="hover:font-bold">Multimeter ( sadly not delivered yet ).</li>
+                </ul>
+            </div>
+
+            <div class=" bg-red-100 m-6 p-2">
+                <p class="font-bold text-red-400 hover:text-red-600">
+                For now I will keep things short for the first draft of the blog, but this may change in the future and i may give more details 
+                to some concepts ( as far as my knowledge goes ).
+                </p>
+            </div>
+
+            <div class="notlogicalgate my-4 mx-4 p-2 bg-std-main flex gap-2">
+
+                <div>
+                    <h3 class="text-2xl my-2 font-semibold"> NOT Logical Gate:</h3>
+                    <p class="hover:font-bold"> The logical gates are gates that are sort of functions that work in the binary space, basically
+                    the input(s) of the function are in {0,1} ( either there is a signal or not ) and gives an output in {0,1}.
+                    The Not Logical Gate is the simplest gate, it takes an input and outputs the reverse of its value.
+                    </p>
+                </div>
+
+                <div class="flex-row">
+                    <svg class="stroke-first-accent fill-first-accent" height="100" width="100" viewBox="-50 0 200 150">
+                        <line
+                                x1="-50"
+                                y1="50"
+                                x2="150"
+                                y2="50"
+                                stroke-width="5"
+                                />
+                        <polygon
+                                points="
+                                        0,0
+                                        100,50
+                                        0,100
+                                        " 
+                                stroke-width="5"
+                                />
+                        <circle
+                                cx="100"
+                                cy="50"
+                                r="10"
+                                stroke-width="5"
+                                />
+                    </svg>
+                    <table class="w-full border-separate border table-auto">
+                        <thead class="bg-first-accent text-white">
+                            <tr>
+                                <th class="border border-first-accent">Input</th>
+                                <th class="border border-first-accent">Output</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-first-accent text-center">0</td>
+                                <td class="border border-first-accent text-center">1</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-first-accent text-center">1</td>
+                                <td class="border border-first-accent text-center">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- not logical gate div end--> 
+            <div class="m-4 p-2">
+                <div class="flex justify-between items-center w-full">
+                    <p class = "my-2 flex-1 min-w-0 hover:font-bold">
+                    Now we want to answer the question of how can we make a NOT gate, one way would be by using an NPN transistor with a base
+                    wired to to our input. 
+                    </p>
+                    <svg class="circuit" height="400" width="400" viewBox="-150 -150 350 350">
+                        <text x="0" y="-100" font-family="sans-serif" font-size="20" fill="#00477c" text-anchor="middle">VCC</text>
+                        <line
+                                x1="-20"
+                                y1="-90"
+                                x2="20"
+                                y2="-90"
+                                stroke-width="5"
+                                stroke="#00477c"
+                                />
+                        <!--from vcc to collector-->
+                        <line 
+                                x1="0"
+                                y1="-90"
+                                x2="0"
+                                y2="0"
+                                stroke-width="5"
+                                stroke="#00477c"
+                                /> 
+                        <!--transistor-->
+                        <line
+                                x1="0"
+                                y1="0"
+                                x2="-20"
+                                y2="10"
+                                stroke-width="5"
+                                stroke="#00477c"
+                                />
+                        <line
+                                x1="-20"
+                                y1="0"
+                                x2="-20"
+                                y2="40"
+                                stroke-width="5"
+                                stroke="#00477c"
+                                />
+                        <line
+                                x1="0"
+                                y1="40"
+                                x2="-20"
+                                y2="30"
+                                stroke-width="5"
+                                stroke="#00477c"
+                                />
+                        <circle
+                                cx="-8"
+                                cy="20"
+                                r="35"
+                                stroke-width="5"
+                                fill="none"
+                                stroke="#00477c"
+                                />
+                        <!-- input to base -->
+                        <line
+                                x1="-100"
+                                y1="20"
+                                x2="-20"
+                                y2="20"
+                                stroke-width="5"
+                                stroke="#00477c"
+                                />
+                        <!-- emitter to ground-->
+                        <line
+                                x1="0"
+                                y1="40"
+                                x2="0"
+                                y2="180"
+                                stroke-width="5"
+                                stroke="#00477c"
+                                />
+                        <!-- ground -->
+                        <line
+                                x1="-20"
+                                y1="180"
+                                x2="20"
+                                y2="180"
+                                stroke-width="3"
+                                stroke="#00477c"
+                                />
+                        <line
+                                x1="-10"
+                                y1="190"
+                                x2="10"
+                                y2="190"
+                                stroke-width="3"
+                                stroke="#00477c"
+                                />
+                        <line
+                                x1="-5"
+                                y1="200"
+                                x2="5"
+                                y2="200"
+                                stroke-width="3"
+                                stroke="#00477c"
+                                />
+                        <!-- -- link to output -->
+                        <circle
+                                cx="0"
+                                cy="-55"
+                                r="4"
+                                stroke-width="2"
+                                fill="#00477c"
+                                stroke="#00477c"
+                                />
+                        <line
+                                x1="0"
+                                y1="-55"
+                                x2="100"
+                                y2="-55"
+                                stroke-width="5"
+                                stroke="#00477c"
+                                />
+                        <!-- -- collector-->
+                        <text x="20" y="-30" font-family="sans-serif" font-size="20" fill="purple" text-anchor="middle">C</text>
+                        <circle
+                                cx="0"
+                                cy="-25"
+                                r="4"
+                                stroke-width="2"
+                                fill="purple"
+                                stroke="purple"
+                                />
+                        <!-- -- base -->
+                        <text x="-60" y="10" font-family="sans-serif" font-size="20" fill="green" text-anchor="middle">B</text>
+                        <circle
+                                cx="-50"
+                                cy="20"
+                                r="4"
+                                stroke-width="2"
+                                fill="green"
+                                stroke="green"
+                                />
+                        <!-- -- emettor-->
+                        <text x="20" y="70" font-family="sans-serif" font-size="20" fill="red" text-anchor="middle">E</text>
+                        <circle
+                                cx="0"
+                                cy="70"
+                                r="4"
+                                stroke-width="2"
+                                fill="red"
+                                stroke="red"
+                                />
+                        <!-- -- input -->
+                        <text x="-110" y="0" font-family="sans-serif" font-size="20" fill="brown" text-anchor="middle">Input</text>
+                        <circle
+                                cx="-100"
+                                cy="20"
+                                r="8"
+                                stroke-width="2"
+                                fill="brown"
+                                stroke="brown"
+                                />
+                        <line 
+                                x1="-100"
+                                y1="35"
+                                x2="-100"
+                                y2="180"
+                                stroke-width="4"
+                                stroke="brown"
+                                />
+                        <line 
+                                x1="-100"
+                                y1="35"
+                                x2="-110"
+                                y2="45"
+                                stroke-width="4"
+                                stroke="brown"
+                                />
+                        <line 
+                                x1="-100"
+                                y1="35"
+                                x2="-90"
+                                y2="45"
+                                stroke-width="4"
+                                stroke="brown"
+                                />
+                        <!-- -- output -->
+                        <text x="110" y="-75" font-family="sans-serif" font-size="20" fill="orange" text-anchor="middle">Output</text>
+                        <circle
+                                cx="100"
+                                cy="-55"
+                                r="8"
+                                stroke-width="2"
+                                fill="orange"
+                                stroke="orange"
+                                />
+                        <line 
+                                x1="100"
+                                y1="-35"
+                                x2="100"
+                                y2="180"
+                                stroke-width="4"
+                                stroke="orange"
+                                />
+                        <line 
+                                x1="100"
+                                y1="-35"
+                                x2="110"
+                                y2="-25"
+                                stroke-width="4"
+                                stroke="orange"
+                                />
+                        <line 
+                                x1="100"
+                                y1="-35"
+                                x2="90"
+                                y2="-25"
+                                stroke-width="4"
+                                stroke="orange"
+                                />
+                    </svg>
+                </div>
+                <!-- implementation subsection -->
+                <div class = "flex justify-between items-center w-full my-4 gap-8">
+                    <img class="w-2/5 h-auto " src="schema_not_gate.svg" />
+                    <div class="flex-1 flex-row">
+                        <p class="my-2 hover:font-bold">
+                        For the implementation, I tried a circuit in the bread board, 
+                        where i have a not gate and a buffer, both using the transistor implementation
+                        and both bases are linked to the same source, the result is that the existing of
+                        source in both bases turn on one led and turn off the other. 
+                        </p>
+                        <div class= "flex w-full gap-2">
+                            <img class="w-1/2 h-auto" src="green_led.jpg">
+                            <img class="w-1/2 h-auto" src="blue_led.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- a tailwindcss line clamp might be useful
+            for clamping text on a blog card
+        -->
+    </body>
+</html>
