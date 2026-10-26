@@ -31,3 +31,7 @@ variable "host-prefix" {
         environment = ["development"]
     }
 }
+
+variable "version" {
+    value "#{Octopus.Release.Number}" {}
+}
