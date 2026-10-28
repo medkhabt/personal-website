@@ -2,9 +2,8 @@
 name: Main CI/CD
 on:
   push:
-    branches:
-      - main
-      - develop
+    branches: # TODO don't forget to put back main and develop
+      - analytics-start
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -27,9 +26,10 @@ jobs:
         run: |
           VERSION=$(node -p "require('./package.json').version")
 
-          if [[ ${{ github.ref_name}} == "develop" ]]; then
+          # TODO: don't forget to uncomment
+          #if [[ ${{ github.ref_name}} == "develop" ]]; then
             VERSION="${VERSION}-build.${{github.run_number}}"
-          fi
+          #fi
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Build and Push the Image to Docker Hub
