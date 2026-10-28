@@ -35,3 +35,19 @@ variable "host-prefix" {
 variable "version" {
     value "#{Octopus.Release.Number}" {}
 }
+
+variable "UmamiWebsiteId" {
+    value "eae5e9cf-3ed3-4bf6-8740-ac8798db3b88" {
+        description = ""
+        environment = ["staging"]
+    }
+
+    value "1ba10366-dc56-4d08-9fa3-bcb179cf1691" {
+        description = ""
+        environment = ["production"]
+    }
+
+    value "af31ee85-0371-4817-a960-6ef6fba287f8" {
+        environment = ["development"]
+    }
+}
